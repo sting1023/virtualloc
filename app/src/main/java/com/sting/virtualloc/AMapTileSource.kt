@@ -15,6 +15,12 @@ class AMapTileSource : OnlineTileSourceBase(
         "https://webrd03.is.autonavi.com/appmaptile"
     )
 ) {
+    private val baseUrls = arrayOf(
+        "https://webrd01.is.autonavi.com/appmaptile",
+        "https://webrd02.is.autonavi.com/appmaptile",
+        "https://webrd03.is.autonavi.com/appmaptile"
+    )
+
     override fun getTileURLString(aMapTileIndex: Long): String {
         // osmdroid tile index 编码: zoom=bits[0-7], x=bits[8-31], y=bits[32-63]
         val z = (aMapTileIndex and 0xFF).toInt()
